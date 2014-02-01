@@ -8,6 +8,7 @@ class Nlopt < Formula
   def install
     ENV.deparallelize
     system "./configure", "--with-cxx",
+                          "--enable-shared",
                           "--prefix=#{prefix}"
     system "make"
     system "make", "install"
