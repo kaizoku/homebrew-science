@@ -8,6 +8,7 @@ class Nlopt < Formula
 
   def install
     ENV.deparallelize
+    ENV['PATH'] += ":" + File.join(Formula.factory('octave').prefix, "bin")
     system "./configure", "--with-cxx",
                           "--enable-shared",
                           "--prefix=#{prefix}"
